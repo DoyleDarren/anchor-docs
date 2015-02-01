@@ -253,3 +253,7 @@ footer {
     color:#444;
   }
 }
+div.navigation-menu {
+  position: absolute;
+  top: 200px;
+}
