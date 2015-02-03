@@ -1,5 +1,5 @@
 #Requirements
-In order to remain lightweight, Anchor only supports recent versions of the languages it’s written in. As such, you will need:
+In order to remain lightweight, Anchor only supports recent versions of the languages it’s written in. So you'll need:
 
 * PHP 5.3.6+
 * curl
@@ -10,7 +10,9 @@ In order to remain lightweight, Anchor only supports recent versions of the lang
 
 If you’re not sure what version of PHP you have, create a new file, and paste the following in at the top of the page:
 
-> <?php echo PHP_VERSION; // version.php
+~~~
+> ?php echo PHP_VERSION; // version.php
+~~~
 
 This should print a number to your screen, which should exceed 5.3.6.
 
