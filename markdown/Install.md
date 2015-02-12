@@ -9,7 +9,9 @@ Before installing, make sure your platform has the [required components](http://
 5. Next you will need to create a database for Anchor to install to, this can be called anything you like. On different host this process might vary, normally you will have access to some sort of GUI client such as PHPMyAdmin or Sequel Pro. You’ll need to ask your webhost if you’re not sure about this.
 6. Navigate your browser to your Anchor installation URL, if you have placed Anchor in a sub directory make sure you append the folder name to the URL:
 
-> http://mydomainname.com/anchor
+~~~
+http://mydomainname.com/anchor
+~~~
 
 7. Follow the instructions in the installer.
 8. Once you have completed the install, make sure to delete install folder for security purposes.
