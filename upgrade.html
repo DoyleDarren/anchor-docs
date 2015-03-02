@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<title>Anchor-docs by DrrnDyl</title>
+
+<link rel="stylesheet" href="stylesheets/styles.css">
+<link rel="stylesheet" href="stylesheets/pygment_trac.css">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+	<div class="wrapper">
+      <header>
+        <h1>Anchor-docs</h1>
+        <p>Anchor CMS documentation</p>
+  		<p class="view"><a href="https://github.com/DrrnDyl/anchor-docs">View the Project on GitHub <small>DrrnDyl/anchor-docs</small></a></p>
+      </header>
+      <div class="navigation-menu">
+        <ul class="menu">
+          <li><a href="requirements.html">Requirements</a></li>
+          <li><a href="install.html">Install</a></li>
+          <li><a href="upgrade.html">Upgrade</a></li>
+          <li><a href="configure.html">Configure</a></li> 
+          <li><a href="posts.html">Posts (Articles)</a></li>  
+          <li><a href="comments.html">Comments</a></li>
+          <li><a href="pages.html">Pages</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="users.html">Users</a></li>
+          <li><a href="metadata.html">Metadata</a></li> 
+          <li><a href="custom-fields.html">Custom Fields</a></li>
+          <li><a href="custom-variables.html">Custom Variables</a></li>
+          <li><a href="introduction-to-theming.html">Introduction to theming</a></li>
+          <li><a href="file-structure.html">File Structure</a></li>
+          <li><a href="custom-templates.html">Custom Templates</a></li>
+          <li><a href="articles.html">Articles</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="comments.html">Comments</a></li>
+          <li><a href="config.html">Config</a></li>
+          <li><a href="helpers.html">Helpers</a></li>
+          <li><a href="menus.html">Menus</a></li>
+          <li><a href="metadata.html">Metadata</a></li>
+          <li><a href="pages.html">Pages</a></li>
+          <li><a href="posts.html">Posts</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a href="users.html">Users</a></li>
+          <li><a href="base.html">Base</a></li>
+          <li><a href="category.html">Categoty</a></li>
+          <li><a href="comment.html">Comment</a></li>
+          <li><a href="extend.html">Extend</a></li>
+          <li><a href="page.html">Page</a></li>
+          <li><a href="plugin.html">Plugin</a></li>
+          <li><a href="post.html">Post</a></li>
+          <li><a href="user.html">User</a></li>
+        <ul>
+      </div>    
+      <section> 
+<h1 id="upgrading">Upgrading</h1>
+<p>Make sure you backup your database and files before you begin.</p>
+<p>Here's an example for backup up on most servers via SSH using mySQL dump:</p>
+<pre><code>mysqldump
+    --compact
+    --quick
+    --user myusername
+    --password=mypassword
+    --host=localhost anchorcms &gt; /path/to/my/site/httpdocs/db.sql</code></pre>
+<p>Let's make it into a zip file, using tar gzip, and save it in a safe place.</p>
+<pre><code>tar --create
+    --gzip
+    --file=/home/myusername/backups/anchor.tgz
+    --directory=/path/to/my/site/httpdocs</code></pre>
+<h2 id="upgrading-from-0.8-and-above">Upgrading from 0.8 and above</h2>
+<ol style="list-style-type: decimal">
+<li>Download the <a href="http://anchorcms.com/download">latest version</a></li>
+<li>Extract the archive and copy/paste/overwrite the anchor and system folders and the index.php file.</li>
+<li>Rename anchor/config/database.php --&gt; anchor/config/db.php</li>
+<li>Rename anchor/config/application.php --&gt; anchor/config/app.php</li>
+<li>Done!</li>
+</ol>
+<h2 id="upgrading-from-older-versions-0.8-and-below">Upgrading from older versions (0.8 and below)</h2>
+<ol style="list-style-type: decimal">
+<li>Delete your old system folder.</li>
+<li>Download the latest version and extract the archive.</li>
+<li>Upload and overwrite extracted files to your server.</li>
+<li>If you have customised the default theme rename it or else it will be overwritten.</li>
+<li>Copy the database and application sample files from the installer to your new anchor folder. <sub>~</sub> cp install/storage/application.distro.php anchor/config/application.php</li>
+</ol>
+<pre><code>cp install/storage/application.distro.php anchor/config/application.php
+cp install/storage/database.distro.php anchor/config/database.php</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>Edit the new files and copy the details from your old config.php file.<br />For example, my old config database details would be changed from this:</li>
+</ol>
+<pre><code>&#39;host&#39; =&gt; &#39;anchor-cms-demo.mysql.eu1.frbit.com&#39;,
+&#39;port&#39; =&gt; &#39;3306&#39;,
+&#39;username&#39; =&gt; &#39;anchor-cms-demo&#39;,
+&#39;password&#39; =&gt; &#39;my-awesome-password&#39;,
+&#39;name&#39; =&gt; &#39;anchorcms&#39;,
+&#39;collation&#39; =&gt; &#39;utf8_bin&#39;</code></pre>
+<p>To this:</p>
+<pre><code>&#39;driver&#39; =&gt; &#39;mysql&#39;,
+&#39;hostname&#39; =&gt; &#39;anchor-cms-demo.mysql.eu1.frbit.com&#39;,
+&#39;port&#39; =&gt; 3306,
+&#39;username&#39; =&gt; &#39;anchor-cms-demo&#39;,
+&#39;password&#39; =&gt; &#39;my-awesome-password&#39;,
+&#39;database&#39; =&gt; &#39;anchorcms&#39;</code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li>Run your site and you're done.</li>
+</ol>
+</section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/DrrnDyl">DrrnDyl</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

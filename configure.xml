@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="stylesheets/style.xsl"?>
+<configure>
+	<section>
+		<pagehead>
+			Configure
+		</pagehead>
+		<content>After you've installed Anchor you may wish to change some of its defaults. To do this, you’ll need to modify some config files.</content>
+	</section>
+	<section>	
+		<subhead>
+			Finding your config files
+		</subhead>
+		<content>
+			All configuration files are stored in the anchor/config folder, but if you need to modify some specific parts of Anchor, continue reading for some common examples.
+		</content>
+	</section>	
+	<section>
+		<subhead>
+			Clean URLs
+		</subhead>	
+		<content>
+			By default, the installer will try and detect if you have Apache and mod_rewrite enabled and create the .htaccess file for you. However, in some cases (mainly due to server restrictions), Anchor is unable to do it for you, and you’ll need to do it yourself. Here’s how to enable clean URLs and remove the index.php/ from the URL.
+		</content>
+	</section>
+	<section>	
+	<numlist>
+		<list>
+			Edit the file anchor/config/app.php and set the url to your base URL (the path to your Anchor installation — if you’re installing Anchor as a subfolder, it’s the name of that subfolder).
+			
+		</list>
+		<snippet>
+				return array(
+		    	...
+		    	'url' => '/', // or '/anchor' for subfolder called `anchor`
+		</snippet>
+		<list>
+			In the same file, anchor/config/app.php, set the index to an empty string.
+		</list>	
+		<snippet>
+			return array(
+				 ...
+			'index' => ''
+		</snippet>
+	
+		<list>
+			Tell your server to listen to the URL changes (you may need to restart your server).
+
+			Apache (mod_rewrite)
+
+			Create a .htaccess file in your web root and paste the following contents:
+
+		</list>
+			</numlist>
+	<snippet>
+		<![CDATA[
+        	<IfModule mod_rewrite.c>
+   			RewriteEngine On
+    		RewriteCond %{REQUEST_FILENAME} !-f
+    		RewriteRule ^ index.php [L]
+			</IfModule>
+     	]]>		
+	</snippet>
+	</section>
+	
+
+	<section>
+	<numlist>
+	<list>	
+		step one
+	</list>
+
+	<list>	
+		step two
+	</list>
+	</numlist>
+	</section>
+
+	<section>
+		<content>		
+			Nginx
+			Make sure in your vhost file you have the tr_files feature.
+		</content>
+	</section>		 
+	<section>
+		<subhead>Timezone</subhead>
+		<content>
+			If you need to use a non-UTC timezone (for example, using the relative_time function in America/Asia), you’ll need to change Anchor’s system timezone. Anchor uses standard PHP timezones; to find your timezone, check the PHP documentation.
+		</content>
+	</section>
+	<section>		
+		<content>	
+			Once you’ve found your timezone string, edit the timezone field in anchor/config/app.php (which should follow the format below, replacing Europe/London with your timezone string).
+		</content>
+		<snippet>
+			return array(
+    		...
+    		'timezone' => 'Europe/London',
+		</snippet>	
+		<subhead>Language</subhead>
+		Anchor supports multiple lannguages. To swithc between languages, edit the language variable in anchor/config/app.php'.
+		<snippet>
+			return array(
+   			 ...
+    		'language' => 'en_GB',
+		</snippet>
+	</section>	
+		<section>
+			<subhead>Available translations</subhead>
+			 <content>
+			 	You can view all of Anchor’s translations on the GitHub page, but here’s a short list of available (known working) translations.
+			 </content>
+		</section>
+		<section>	 	
+			 <bulletlist>
+			 	<list>German (de_DE)</list>
+			 </bulletlist>
+			  <bulletlist>
+			 	<list>Iberian Spanish (es_ES)</list>
+			 </bulletlist>
+			  <bulletlist>
+			 	<list>Estonian (et_EE)</list>
+			 </bulletlist>
+			  <bulletlist>
+			 	<list>English (en_GB)</list>
+			 </bulletlist>
+			  <bulletlist>
+			 	<list>French (fr_FR)</list>
+			 </bulletlist>
+			  <bulletlist>
+			 	<list>Hungarian (hu_HU)</list>
+			 </bulletlist>
+			  <bulletlist>
+			 	<list>Italian (it_IT)</list>
+			 </bulletlist>
+			  <bulletlist>
+			 	<list>Dutch (nl_NL)</list>
+			 </bulletlist>
+			  <bulletlist>
+			 	<list>Brazilian Portuguese (pt_BR)</list>
+			 </bulletlist>
+			  <bulletlist>
+			 	<list>Swedish (sv_SE)</list>
+			 </bulletlist>
+			  <bulletlist>
+			 	<list>Welsh (cy_GB)</list>
+			 </bulletlist>
+		</section>	 
+		<section>
+			 <content>
+				If you would like to add a new translation please submit a pull request; make sure the folder name for the new translate follows the ISO 639 'underscore' ISO 3166 format.
+			 </content>	 
+	</section>	
+</configure>
+	
