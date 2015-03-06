@@ -257,3 +257,14 @@ div.navigation-menu {
   position: absolute;
   top: 200px;
 }
+/*My code*/
+.menu{
+  list-style: none;
+}
+
+/*Mobile menu fix*/
+@media screen and (max-width: 959px) {
+  .menu {
+    visibility: hidden;
+  }
+  
