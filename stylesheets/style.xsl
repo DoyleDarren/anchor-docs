@@ -23,6 +23,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         <p>Anchor CMS documentation</p>
   
          <p class="view"><a href="https://github.com/DrrnDyl/anchor-docs">View the Project on GitHub <small>DrrnDyl/anchor-docs</small></a></p>
+
       </header>
       <div class="navigation-menu">
         <ul class="menu">
@@ -70,33 +71,33 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
           <xsl:if test="snippet"> 
             <pre><code><xsl:value-of select="snippet"/></code></pre>
           </xsl:if> 
-        </xsl:for-each>
-        <xsl:for-each select="numlist">
-          <xsl:if test="//numlist">
-              <ol>
+          <xsl:for-each select="numlist">
+            <xsl:if test="//numlist">
+                <ol>
+                  <xsl:for-each select="list">
+                    <li><xsl:value-of select="."/></li>
+                    <xsl:if test="snippet">
+                      <xsl:value-of select="//configure/section/numlist/snippet"/>
+                      <pre><code><xsl:value-of select="snippet"/></code></pre>
+                    </xsl:if>  
+                  </xsl:for-each>
+              </ol>
+            </xsl:if>  
+          </xsl:for-each>
+          <xsl:for-each select="bulletlist">
+            <xsl:if test="//bulletlist">
+              <ul>
                 <xsl:for-each select="list">
                   <li><xsl:value-of select="."/></li>
-                  <xsl:if test="snippet">
-                    <xsl:value-of select="//configure/section/numlist/snippet"/>
+                   <xsl:if test="snippet">
+                    <xsl:value-of select="//configure/section/bulletlist/snippet"/>
                     <pre><code><xsl:value-of select="snippet"/></code></pre>
-                  </xsl:if>  
-                </xsl:for-each>
-            </ol>
-          </xsl:if>  
-        </xsl:for-each>
-        <xsl:for-each select="bulletlist">
-          <xsl:if test="//bulletlist">
-            <ul>
-              <xsl:for-each select="list">
-                <li><xsl:value-of select="."/></li>
-                 <xsl:if test="snippet">
-                  <xsl:value-of select="//configure/section/bulletlist/snippet"/>
-                  <pre><code><xsl:value-of select="snippet"/></code></pre>
-                 </xsl:if> 
-                </xsl:for-each>
-            </ul>
-          </xsl:if>  
-        </xsl:for-each>       
+                   </xsl:if> 
+                  </xsl:for-each>
+              </ul>
+            </xsl:if>  
+          </xsl:for-each>
+        </xsl:for-each>        
        </section>
    <footer>
         <p>This project is maintained by <a href="https://github.com/DrrnDyl">DrrnDyl</a></p>
