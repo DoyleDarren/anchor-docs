@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="stylesheets/style.xsl"?>
+<configure>
+	<section>
+		<pagehead>
+			Requirements
+		</pagehead>
+		<content> 
+			In order to remain lightweight, Anchor only supports recent versions of the languages it’s written in. So you'll need:
+		</content>
+	</section>
+	<section>	
+		<bulletlist>
+			<list>PHP 5.3.6+</list>
+		</bulletlist>	
+		<bulletlist>	
+			<list>curl</list>
+		</bulletlist>		
+		<bulletlist>	
+			<list>mcrypt</list>
+		</bulletlist>
+		<bulletlist>		
+			<list>gd</list>
+		</bulletlist>
+		<bulletlist>			
+			<list>pdo_mysql or pdo_sqlite</list>
+		</bulletlist>
+		<bulletlist>			
+			<list>MySQL 5.2+</list>
+		</bulletlist>
+	</section>
+	<section>	
+		<content>
+			If you’re not sure what version of PHP you have, create a new file and paste the following in at the top of the page:
+		</content>
+		<snippet>
+?php echo PHP_VERSION; // version.php
+		</snippet>
+		<content>This should print a number to your screen, which should exceed 5.3.6.</content>
+		<content>If you don’t have the necessary requirements, you will not be able to install Anchor. You should contact your host to upgrade.
+		</content>
+	</section>
+</configure>
