@@ -36,8 +36,15 @@
 		<snippet>
 ?php echo PHP_VERSION; // version.php
 		</snippet>
-		<content>This should print a number to your screen, which should exceed 5.3.6.</content>
-		<content>If you don’t have the necessary requirements, you will not be able to install Anchor. You should contact your host to upgrade.
-		</content>
+	</section>
+	<section>	
+		<content>
+			This should print a number to your screen, which should exceed 5.3.6.
+		</content>	
+	</section>
+	<section>
+		<content>
+			If you don’t have the necessary requirements, you will not be able to install Anchor. You should contact your host to upgrade.
+		</content>		
 	</section>
 </configure>
