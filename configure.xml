@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="stylesheets/style.xsl"?>
-<configure>
+<page>
 	<section>
 		<pagehead>
 			Configure
@@ -26,42 +26,40 @@
 	<section>	
 	<numlist>
 		<list>
-			Edit the file anchor/config/app.php and set the url to your base URL (the path to your Anchor installation — if you’re installing Anchor as a subfolder, it’s the name of that subfolder).
-			
+			<listee type="content">
+				Edit the file anchor/config/app.php and set the url to your base URL (the path to your Anchor installation — if you’re installing Anchor as a subfolder, it’s the name of that subfolder).
+			</listee>
+			<listee type="snippet">return array(
+...
+'url' => '/', // or '/anchor' for subfolder called `anchor`</listee>
 		</list>
-		<snippet>
-				return array(
-		    	...
-		    	'url' => '/', // or '/anchor' for subfolder called `anchor`
-		</snippet>
+		
 		<list>
+			<listee type="content">
 			In the same file, anchor/config/app.php, set the index to an empty string.
+			</listee>
+				<listee type="snippet">return array(
+ ...
+'index' => ''</listee>
 		</list>	
-		<snippet>
-			return array(
-				 ...
-			'index' => ''
-		</snippet>
-	
 		<list>
+			<listee type="content">
 			Tell your server to listen to the URL changes (you may need to restart your server).
 
 			Apache (mod_rewrite)
 
 			Create a .htaccess file in your web root and paste the following contents:
-
+			</listee>
+			<listee type="snippet"><![CDATA[
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]
+</IfModule>
+]]></listee>
 		</list>
-			</numlist>
-	<snippet>
-		<![CDATA[
-        	<IfModule mod_rewrite.c>
-   			RewriteEngine On
-    		RewriteCond %{REQUEST_FILENAME} !-f
-    		RewriteRule ^ index.php [L]
-			</IfModule>
-     	]]>		
-	</snippet>
-	</section>
+	</numlist>
+</section>
 	
 
 	<section>
@@ -146,10 +144,23 @@
 			 	<list>Welsh (cy_GB)</list>
 			 </bulletlist>
 		</section>	 
+	<bulletlist>
+		<list>
+			hellow
+		</list>	
+		<list>
+			good day
+		</list>	
+		<list>
+			bye
+		</list>	
+	</bulletlist>
+
 		<section>
 			 <content>
 				If you would like to add a new translation please submit a pull request; make sure the folder name for the new translate follows the ISO 639 'underscore' ISO 3166 format.
 			 </content>	 
+
 	</section>	
-</configure>
+</page>
 	
