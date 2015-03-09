@@ -33,9 +33,7 @@
 		<content>
 			If you’re not sure what version of PHP you have, create a new file and paste the following in at the top of the page:
 		</content>
-		<snippet>
-?php echo PHP_VERSION; // version.php
-		</snippet>
+		<snippet>?php echo PHP_VERSION; // version.php</snippet>
 	</section>
 	<section>	
 		<content>
