@@ -64,34 +64,37 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         </ul>
       </div>    
       <section> 
-        <h1><xsl:value-of select="configure/section/pagehead"/></h1>
-        <xsl:for-each select="configure/section">
+        <h1><xsl:value-of select="page/section/pagehead"/></h1>
+        <xsl:for-each select="page/section">
           <h2><xsl:value-of select="subhead"/></h2>
           <p><xsl:value-of select="content"/></p>
           <xsl:if test="snippet"> 
             <pre><code><xsl:value-of select="snippet"/></code></pre>
           </xsl:if> 
           <xsl:for-each select="numlist">
-            <xsl:if test="//numlist">
-                <ol>
+            <xsl:if test="list">
+              <ol>
                   <xsl:for-each select="list">
-                    <li><xsl:value-of select="."/></li>
-                    <xsl:if test="snippet">
-                      <xsl:value-of select="//configure/section/numlist/snippet"/>
-                      <pre><code><xsl:value-of select="snippet"/></code></pre>
-                    </xsl:if>  
-                  </xsl:for-each>
+                     <li> 
+                        <xsl:for-each select="listee">
+                          <xsl:value-of select=".[@type='content']"/>
+                            <xsl:if test=".[@type='snippet']">
+                           <pre><code><xsl:value-of select=".[@type='snippet']"/></code></pre>
+                            </xsl:if>
+                        </xsl:for-each>
+                    </li>
+                  </xsl:for-each>                 
               </ol>
             </xsl:if>  
           </xsl:for-each>
           <xsl:for-each select="bulletlist">
-            <xsl:if test="//bulletlist">
+            <xsl:if test="list">
               <ul>
                 <xsl:for-each select="list">
                   <li><xsl:value-of select="."/></li>
                    <xsl:if test="snippet">
-                    <xsl:value-of select="//configure/section/bulletlist/snippet"/>
-                    <pre><code><xsl:value-of select="snippet"/></code></pre>
+                    <xsl:value-of select="//page/section/bulletlist/snippet"/>
+                    <pre><code><xsl:value-of select="."/></code></pre>
                    </xsl:if> 
                   </xsl:for-each>
               </ul>

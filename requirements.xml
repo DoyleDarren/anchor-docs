@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="stylesheets/style.xsl"?>
-<configure>
+<page>
 	<section>
 		<pagehead>
 			Requirements
@@ -45,4 +45,4 @@
 			If you don’t have the necessary requirements, you will not be able to install Anchor. You should contact your host to upgrade.
 		</content>		
 	</section>
-</configure>
+</page>

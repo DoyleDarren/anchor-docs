@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="stylesheets/style.xsl"?>
+<page>  
+  <section> 
+<pagehead>Upgrading</pagehead>
+<content>Make sure you backup your database and files before you begin.</content>
+  </section>
+  <section>
+<content>Here's an example for backup up on most servers via SSH using mySQL dump:</content>
+  </section>
+  <section>
+<snippet>mysqldump
+    --compact
+    --quick
+    --user myusername
+    --password=mypassword
+    --host=localhost anchorcms &gt; /path/to/my/site/httpdocs/db.sql</snippet>
+<content>Let's make it into a zip file, using tar gzip, and save it in a safe place.</content>
+  </section>
+  <section> 
+<snippet>tar --create
+    --gzip
+    --file=/home/myusername/backups/anchor.tgz
+    --directory=/path/to/my/site/httpdocs</snippet>
+   </section>
+   <section> 
+<subhead>Upgrading from 0.8 and above</subhead>
+
+<numlist>
+<list>Download the <a href="http://anchorcms.com/download">latest version</a></list>
+<list>Extract the archive and copy/paste/overwrite the anchor and system folders and the index.php file.</list>
+<list>Rename anchor/config/database.php --&gt; anchor/config/db.php</list>
+<list>Rename anchor/config/application.php --&gt; anchor/config/app.php</list>
+<list>Done!</list>
+</numlist>
+</section>
+<section>
+<subhead>Upgrading from older versions (0.8 and below)</subhead>
+<numlist>
+<list>Delete your old system folder.</list>
+<list>Download the latest version and extract the archive.</list>
+<list>Upload and overwrite extracted files to your server.</list>
+<list>If you have customised the default theme rename it or else it will be overwritten.</list>
+<list>Copy the database and application sample files from the installer to your new anchor folder. <sub>~</sub> cp install/storage/application.distro.php anchor/config/application.php</list>
+</numlist>
+<snippet>cp install/storage/application.distro.php anchor/config/application.php
+cp install/storage/database.distro.php anchor/config/database.php</snippet>
+<numlist start="6" style="list-style-type: decimal">
+<list>Edit the new files and copy the details from your old config.php file.<br />For example, my old config database details would be changed from this:</list>
+</numlist>
+<snippet>&#39;host&#39; =&gt; &#39;anchor-cms-demo.mysql.eu1.frbit.com&#39;,
+&#39;port&#39; =&gt; &#39;3306&#39;,
+&#39;username&#39; =&gt; &#39;anchor-cms-demo&#39;,
+&#39;password&#39; =&gt; &#39;my-awesome-password&#39;,
+&#39;name&#39; =&gt; &#39;anchorcms&#39;,
+&#39;collation&#39; =&gt; &#39;utf8_bin&#39;</snippet>
+<content>To this:</content>
+<snippet>&#39;driver&#39; =&gt; &#39;mysql&#39;,
+&#39;hostname&#39; =&gt; &#39;anchor-cms-demo.mysql.eu1.frbit.com&#39;,
+&#39;port&#39; =&gt; 3306,
+&#39;username&#39; =&gt; &#39;anchor-cms-demo&#39;,
+&#39;password&#39; =&gt; &#39;my-awesome-password&#39;,
+&#39;database&#39; =&gt; &#39;anchorcms&#39;</snippet>
+<numlist>
+<list>Run your site and you're done.</list>
+</numlist>
+</section>
+</page>      
