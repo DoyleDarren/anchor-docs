@@ -267,4 +267,21 @@ div.navigation-menu {
   .menu {
     visibility: hidden;
   }
+
+@media screen and (min-width: 959px) {
+  .mini-menu {
+    visibility: hidden;
+  }
+  
+.mini-menu{
+  float: right;
+  /*position: absolute;*/
+  /*top: 40px;*/
+  /*left: 50px;*/
+  }
+
+ img.linky {
+  width: 20px;
+  height: 20px;
+ } 
   
