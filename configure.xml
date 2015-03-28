@@ -60,20 +60,6 @@ RewriteRule ^ index.php [L]
 		</list>
 	</numlist>
 </section>
-	
-
-	<section>
-	<numlist>
-	<list>	
-		step one
-	</list>
-
-	<list>	
-		step two
-	</list>
-	</numlist>
-	</section>
-
 	<section>
 		<content>		
 			Nginx

@@ -2,11 +2,24 @@
 <?xml-stylesheet type="text/xsl" href="stylesheets/style.xsl"?>
 <page>  
   <section> 
-<pagehead>Upgrading</pagehead>
-<content>Make sure you backup your database and files before you begin.</content>
+    <pagehead>Upgrading</pagehead>
+    <content>
+      <con type="par">
+        Make sure you backup your database and files before you begin.
+      </con>
+      <con type="link">link xmlns:xlink="http://www.w3.org/1999/xlink">
+          <linkee type="href">www.google.com</linkee>
+          <linkee type="content">here</linkee>
+      </con>  
+      <con 
+        type="par1"> this is a test sentence.
+      </con>
+    </content>
   </section>
   <section>
-<content>Here's an example for backup up on most servers via SSH using mySQL dump:</content>
+      <content>
+        <par>Here's an example for backup up on most servers via SSH using mySQL dump:</par>
+      </content>
   </section>
   <section>
 <snippet>mysqldump
@@ -27,42 +40,96 @@
 <subhead>Upgrading from 0.8 and above</subhead>
 
 <numlist>
-<list>Download the <a href="http://anchorcms.com/download">latest version</a></list>
-<list>Extract the archive and copy/paste/overwrite the anchor and system folders and the index.php file.</list>
-<list>Rename anchor/config/database.php --&gt; anchor/config/db.php</list>
-<list>Rename anchor/config/application.php --&gt; anchor/config/app.php</list>
-<list>Done!</list>
+<list>
+  <listee type="content">
+    Download the <a href="http://anchorcms.com/download">latest version</a>
+  </listee>
+ </list> 
+  <listee type="content">
+    <list>Extract the archive and copy/paste/overwrite the anchor and system folders and the index.php file.</list>
+  </listee> 
+  <listee type="content">
+    <list>Rename anchor/config/database.php --&gt; anchor/config/db.php</list>
+   </listee> 
+<list>
+  <listee type="content">
+    Rename anchor/config/application.php --&gt; anchor/config/app.php
+  </listee>
+</list>
+
+<list>
+  <listee type="content">
+  Done!
+</listee>
+</list>
 </numlist>
 </section>
 <section>
 <subhead>Upgrading from older versions (0.8 and below)</subhead>
 <numlist>
-<list>Delete your old system folder.</list>
-<list>Download the latest version and extract the archive.</list>
-<list>Upload and overwrite extracted files to your server.</list>
-<list>If you have customised the default theme rename it or else it will be overwritten.</list>
-<list>Copy the database and application sample files from the installer to your new anchor folder. <sub>~</sub> cp install/storage/application.distro.php anchor/config/application.php</list>
-</numlist>
-<snippet>cp install/storage/application.distro.php anchor/config/application.php
-cp install/storage/database.distro.php anchor/config/database.php</snippet>
-<numlist start="6" style="list-style-type: decimal">
-<list>Edit the new files and copy the details from your old config.php file.<br />For example, my old config database details would be changed from this:</list>
-</numlist>
-<snippet>&#39;host&#39; =&gt; &#39;anchor-cms-demo.mysql.eu1.frbit.com&#39;,
+<list>
+  <listee type="content">
+  Delete your old system folder.
+  </listee>
+</list>
+
+  
+<list>
+  <listee type="content">
+  Download the latest version and extract the archive.
+  </listee>
+</list>
+
+  
+<list>
+  <listee type="content">
+    Upload and overwrite extracted files to your server.
+  </listee>
+</list>
+
+<list>
+  <listee type="content">
+If you have customised the default theme rename it or else it will be overwritten.
+  </listee>
+ </list> 
+
+<list>
+  <listee type="content">
+Copy the database and application sample files from the installer to your new anchor folder. <sub>~</sub> cp install/storage/application.distro.php anchor/config/application.php</listee>
+
+<listee type="snippet">cp install/storage/application.distro.php anchor/config/application.php
+cp install/storage/database.distro.php anchor/config/database.php</listee>
+</list>
+
+<list>
+  <listee type="content">
+    Edit the new files and copy the details from your old config.php file.<br/>For example, my old config database details would be changed from this:
+  </listee>
+  <listee type="snippet">&#39;host&#39; =&gt; &#39;anchor-cms-demo.mysql.eu1.frbit.com&#39;,
 &#39;port&#39; =&gt; &#39;3306&#39;,
 &#39;username&#39; =&gt; &#39;anchor-cms-demo&#39;,
 &#39;password&#39; =&gt; &#39;my-awesome-password&#39;,
 &#39;name&#39; =&gt; &#39;anchorcms&#39;,
-&#39;collation&#39; =&gt; &#39;utf8_bin&#39;</snippet>
-<content>To this:</content>
-<snippet>&#39;driver&#39; =&gt; &#39;mysql&#39;,
+&#39;collation&#39; =&gt; &#39;utf8_bin&#39;
+  </listee>
+ </list>
+ <list> 
+  <listee type="content">
+    To this:
+  </listee>
+    <listee type="snippet">&#39;driver&#39; =&gt; &#39;mysql&#39;,
 &#39;hostname&#39; =&gt; &#39;anchor-cms-demo.mysql.eu1.frbit.com&#39;,
 &#39;port&#39; =&gt; 3306,
 &#39;username&#39; =&gt; &#39;anchor-cms-demo&#39;,
 &#39;password&#39; =&gt; &#39;my-awesome-password&#39;,
-&#39;database&#39; =&gt; &#39;anchorcms&#39;</snippet>
-<numlist>
-<list>Run your site and you're done.</list>
+&#39;database&#39; =&gt; &#39;anchorcms&#39;
+    </listee>
+</list>
+<list>
+  <listee type="content">
+    Run your site and you're done.
+  </listee>
+</list>
 </numlist>
 </section>
 </page>      

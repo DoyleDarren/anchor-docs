@@ -4,32 +4,60 @@
       <section> 
     		<pagehead>Install</pagehead>
         <content>
-          Before installing, make sure your platform has the <a href="http://drrndyl.github.io/anchor-docs/html/requirements.html">required components</a> to run Anchor.
+          <!-- Before installing, make sure your platform has the <a href="http://drrndyl.github.io/anchor-docs/html/requirements.html">required components</a> to run Anchor. -->
         </content>
        </section>
        <section> 
         <numlist>
           <list>
+            <listee type="content">
             Download the latest version of Anchor on the <a href="http://anchorcms.com/">anchor website</a>.
+            </listee>
           </list>
         
-        <list>Navigate to your downloaded file and extract the contents.</list>
+        <list>
+            <listee type="content">
+          Navigate to your downloaded file and extract the contents.
+            </listee>
+        </list>
          
-        <list>Depending on your host there may be a few methods of getting files uploaded. The most common is FTP/SFTP. In your favourite client, connect to your webhost and upload the files into the public folder. Note: on different hosts this folder might be called public_html, web, or httpdocs.</list>
+        <list>
+          <listee type="content">
+          Depending on your host there may be a few methods of getting files uploaded. The most common is FTP/SFTP. In your favourite client, connect to your webhost and upload the files into the public folder. Note: on different hosts this folder might be called public_html, web, or httpdocs.
+        </listee>
+        </list>
          
-        <list>Most servers should be configured to allow the webserver to read and write to your files and folders, but some are not. In this case you will have to change the permissions on the contents and anchor/config folder to 0777 for the installer to run.</list>
+        <list>
+          <listee type="content">
+          Most servers should be configured to allow the webserver to read and write to your files and folders, but some are not. In this case you will have to change the permissions on the contents and anchor/config folder to 0777 for the installer to run.
+        </listee>
+        </list>
         
-        <list>Next you will need to create a database for Anchor to install to, this can be called anything you like. On different host this process might vary, normally you will have access to some sort of GUI client such as PHPMyAdmin or Sequel Pro. You’ll need to ask your webhost if you’re not sure about this.</list>
+        <list>
+          <listee type="content">
+          Next you will need to create a database for Anchor to install to, this can be called anything you like. On different host this process might vary, normally you will have access to some sort of GUI client such as PHPMyAdmin or Sequel Pro. You’ll need to ask your webhost if you’re not sure about this.
+        </listee>
+        </list>
          
-        <list>Navigate your browser to your Anchor installation URL, if you have placed Anchor in a sub directory make sure you append the folder name to the URL:</list>
+        <list>
+          <listee type="content">
+          Navigate your browser to your Anchor installation URL, if you have placed Anchor in a sub directory make sure you append the folder name to the URL:
+          </listee>
        
-        <section>
-        <snippet>http://mydomainname.com/anchor</snippet>
-      </section>
+        <listee type="snippet">http://mydomainname.com/anchor</listee>
+         </list>
+
+        <list>
+           <listee type="content">
+          Follow the instructions in the installer.
+           </listee>
+        </list>
         
-        <list>Follow the instructions in the installer.</list>
-        
-        <list>Once you have completed the install, make sure to delete install folder for security purposes.</list>
+        <list>
+           <listee type="content">
+          Once you have completed the install, make sure to delete install folder for security purposes.
+           </listee>
+        </list>
          </numlist>
         </section> 
         <section>
