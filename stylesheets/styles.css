@@ -263,7 +263,7 @@ div.navigation-menu {
 }
 
 /*Mobile menu fix*/
-@media screen and (max-width: 959px) {
+/*@media screen and (max-width: 959px) {
   .menu {
     visibility: hidden;
   }
@@ -271,17 +271,17 @@ div.navigation-menu {
 @media screen and (min-width: 959px) {
   .mini-menu {
     visibility: hidden;
-  }
+  }*/
   
-.mini-menu{
+/*.mini-menu{
   float: right;
-  /*position: absolute;*/
+  position: absolute;
   /*top: 40px;*/
   /*left: 50px;*/
-  }
+  }*/
 
- img.linky {
-  width: 20px;
-  height: 20px;
- } 
+/* img.linky {
+  max-width: 20px;
+  max-height: 20px;
+ } */
   
