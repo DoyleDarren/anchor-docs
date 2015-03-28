@@ -67,7 +67,19 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         <h1><xsl:value-of select="page/section/pagehead"/></h1>
         <xsl:for-each select="page/section">
           <h2><xsl:value-of select="subhead"/></h2>
-          <p><xsl:value-of select="content"/></p>
+          <p>
+            <xsl:for-each select="//section/content/con[@type='par']">
+                <xsl:value-of select="."/>
+            </xsl:for-each>  
+             <xsl:for-each select="//section/content/con[@type='link']">
+                <xsl:if test=".">
+                    <a href="google.com"><xsl:value-of select="//con[@type='link']"/></a>
+                </xsl:if>
+            </xsl:for-each> 
+            <xsl:for-each select="//section/content/con[@type='par1']">
+                <xsl:value-of select="."/>
+            </xsl:for-each>        
+          </p>
           <xsl:if test="snippet"> 
             <pre><code><xsl:value-of select="snippet"/></code></pre>
           </xsl:if> 
