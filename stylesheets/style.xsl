@@ -76,7 +76,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             <xsl:if test="content/con[@type='link']">
               <xsl:for-each select="//section/content/con[@type='link']">
                 <xsl:if test=".">
-                    <a href="www.google.com"><xsl:value-of select="linkee[@type='content']"/></a>
+                    <a href="https://www.google.com"><xsl:value-of select="linkee[@type='content']"/></a>
                 </xsl:if>
               </xsl:for-each> 
             </xsl:if>
