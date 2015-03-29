@@ -68,17 +68,23 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         <xsl:for-each select="page/section">
           <h2><xsl:value-of select="subhead"/></h2>
           <p>
-            <xsl:for-each select="//section/content/con[@type='par']">
-                <xsl:value-of select="."/>
-            </xsl:for-each>  
-             <xsl:for-each select="//section/content/con[@type='link']">
+            <xsl:if test="content/con[@type='par']">
+              <xsl:for-each select="//section/content/con[@type='par']">
+                  <xsl:value-of select="."/>
+              </xsl:for-each>  
+            </xsl:if>
+            <xsl:if test="content/con[@type='link']">
+              <xsl:for-each select="//section/content/con[@type='link']">
                 <xsl:if test=".">
-                    <a href="google.com"><xsl:value-of select="//con[@type='link']"/></a>
+                    <a href="www.google.com"><xsl:value-of select="linkee[@type='content']"/></a>
                 </xsl:if>
-            </xsl:for-each> 
-            <xsl:for-each select="//section/content/con[@type='par1']">
-                <xsl:value-of select="."/>
-            </xsl:for-each>        
+              </xsl:for-each> 
+            </xsl:if>
+            <xsl:if test="content/con[@type='par1']">
+              <xsl:for-each select="//section/content/con[@type='par1']">
+                  <xsl:value-of select="."/>
+              </xsl:for-each> 
+             </xsl:if>        
           </p>
           <xsl:if test="snippet"> 
             <pre><code><xsl:value-of select="snippet"/></code></pre>

@@ -7,7 +7,7 @@
       <con type="par">
         Make sure you backup your database and files before you begin.
       </con>
-      <con type="link">link xmlns:xlink="http://www.w3.org/1999/xlink">
+      <con type="link">
           <linkee type="href">www.google.com</linkee>
           <linkee type="content">here</linkee>
       </con>  
