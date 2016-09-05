@@ -8,7 +8,7 @@
         Make sure you backup your database and files before you begin.
       </con>
       <con type="link">
-          <linkee type="href">www.google.com</linkee>
+          <linkee type="href">href="https://www.google.com"</linkee>
           <linkee type="content">here</linkee>
       </con>  
       <con 

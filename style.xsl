@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <xsl:stylesheet version="1.0" 
-xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 	<xsl:template match="/">
 		<html>
       <head> 
         <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
-    <title>Anchor-docs by DrrnDyl</title>
+        <meta http-equiv="X-UA-Compatible" content="chrome=1"/>
+        <title>Anchor-docs by DrrnDyl</title>
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/styles.css" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-     </head>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <link rel="stylesheet" type="text/css" href="pygment_trac.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+             </head>
 			<body>
         <div class="wrapper">
       <header>
@@ -76,7 +74,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             <xsl:if test="content/con[@type='link']">
               <xsl:for-each select="//section/content/con[@type='link']">
                 <xsl:if test=".">
-                    <a href="https://www.google.com"><xsl:value-of select="linkee[@type='content']"/></a>
+                    <a href="linkee[@type='href']"><xsl:value-of select="linkee[@type='content']"/></a>
                 </xsl:if>
               </xsl:for-each> 
             </xsl:if>
