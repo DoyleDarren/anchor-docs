@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" p="chrome=1">
@@ -8,7 +9,20 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="pygment_trac.css">
     <meta name="viewport" p="width=device-width, initial-scale=1, user-scalable=no">
-   
+<%
+'Load XML file
+set xml = Server.CreateObject("Microsoft.XMLDOM")
+xml.async = false
+xml.load(Server.MapPath("install.xml"))
+
+'Load XSL file
+set xsl = Server.CreateObject("Microsoft.XMLDOM")
+xsl.async = false
+xsl.load(Server.MapPath("style.xsl"))
+
+'Transform file
+Response.Write(xml.transformNode(xsl))
+%>
   </head>
   <body>
     <div class="wrapper">
@@ -98,4 +112,6 @@
     
   </body>
 </html>
+
+
 
