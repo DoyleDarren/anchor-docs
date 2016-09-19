@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+
+	<body>
+		 <%
+		'Load XML file
+		set xml = Server.CreateObject("Microsoft.XMLDOM")
+		xml.async = false
+		xml.load(Server.MapPath("install.xml"))
+
+		'Load XSL file
+		set xsl = Server.CreateObject("Microsoft.XMLDOM")
+		xsl.async = false
+		xsl.load(Server.MapPath("style.xsl"))
+
+		'Transform file
+		Response.Write(xml.transformNode(xsl))
+		%>
+	</body>
+</html>
